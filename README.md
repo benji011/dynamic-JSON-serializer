@@ -39,6 +39,8 @@ The client would also like to reformat the value of `occupation` to be slugged a
 
 Unfortunately, the clients DB is already populated with hundreds of records and is not willing to update or add any new tables. We need to instead modify the response JSON as time is an asset we don't have.
 
+Also take note that not all JSON data should be modified the same way, for example the client wants to slug `occupation` for some members of staff except the sales team, where instead their `achievements` value should be changed instead. Why? don't know but we can do this anyway without a problem.
+
 ## The solution
 
 Since we have JSON, we can feed it into some method that accepts a custom interface, modify a JSONs value and return a copy of it back.
@@ -138,4 +140,16 @@ export const generateSlug = (data: IStaff): string => {
 }
 ```
 
-Easy.
+You can also slug other values like `achievements` which is what I've done with Daniel here:
+
+```json
+{
+  "id": 4,
+  "name": "Daniel",
+  "gender": "male",
+  "occupation": "sales consultant of some company",
+  "achievements": "kpi-of-200"
+}
+```
+
+You can see it's actually pretty easy to modify a value dynamically. Now we have satisfied all the conditions the client has asked for.
