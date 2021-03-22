@@ -14,10 +14,10 @@ yarn && yarn start
 yarn tests
 ```
 
-## Objective
+# Objective
 
-1. Return JSON with modified values
-2. Slug some string value from a sample JSON
+1. Return JSON with modified values.
+2. Slug some string value from a sample JSON, dynamically.
 
 ## The problem - Dynamically modify some JSON output
 
@@ -41,7 +41,7 @@ Unfortunately, the clients DB is already populated with hundreds of records and 
 
 Also take note that not all JSON data should be modified the same way, for example the client wants to slug `occupation` for some members of staff except the sales team, where instead their `achievements` value should be changed instead. Why? don't know but we can do this anyway without a problem.
 
-## The solution
+# Returning a JSON with modified values - The solution
 
 Since we have JSON, we can feed it into some method that accepts a custom interface, modify a JSONs value and return a copy of it back.
 
@@ -104,6 +104,23 @@ export const generateSlug = (data: IStaff): string => {
       .replace(/ /g, '-')
       .replace(/[^\w-]+/g, ''),
   })
+}
+```
+
+# Slug some string value from a sample JSON, dynamically - The solution
+
+But what about modifying a member of staff object? Easy, just use another switch and check its instance type:
+
+```typescript
+switch (verifiedMembersOfStaff.get(staff)) {
+  case Developer:
+    return printSlug(generateDeveloperSlug(json as IStaff))
+  case Management:
+    return printSlug(generateOccupationSlug(json as IStaff))
+  case Sales:
+    return printSlug(generateAchievementsSlug(json as IStaff))
+  default:
+    throw new Error(`Exausted list, ${staff} does not exist.`)
 }
 ```
 
