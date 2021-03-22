@@ -133,31 +133,31 @@ switch (verifiedMembersOfStaff.get(staff)) {
 ```json
 {
   "id": 1,
-  "name": 'Alice',
-  "gender": 'female',
-  "occupation": 'frontend-developer',
-  "achievements": 'deploying to the frontend via ArgoCD'
+  "name": "Alice",
+  "gender": "female",
+  "occupation": "frontend-developer",
+  "achievements": "deploying to the frontend via ArgoCD"
 }
 {
   "id": 2,
-  "name": 'Bob',
-  "gender": 'male',
-  "occupation": 'backend-developer',
-  "achievements": 'decoupling backend services as loosely coupled microservices'
+  "name": "Bob",
+  "gender": "male",
+  "occupation": "backend-developer",
+  "achievements": "decoupling backend services as loosely coupled microservices"
 }
 {
   "id": 3,
-  "name": 'Cassandra',
-  "gender": 'female',
-  "occupation": 'human-resources',
-  "achievements": 'hiring a Lead Senior Engineer'
+  "name": "Cassandra",
+  "gender": "female",
+  "occupation": "human-resources",
+  "achievements": "hiring a Lead Senior Engineer"
 }
 {
   "id": 4,
-  "name": 'Daniel',
-  "gender": 'male',
-  "occupation": 'sales consultant of some company',
-  "achievements": 'kpi-of-200'
+  "name": "Daniel",
+  "gender": "male",
+  "occupation": "sales consultant of some company",
+  "achievements": "kpi-of-200"
 }
 ```
 
