@@ -14,6 +14,10 @@ yarn && yarn start
 yarn tests
 ```
 
+# Links
+
+Medium article [here](https://benjaminlo-dev.medium.com/modifying-a-json-in-typescript-dynamically-based-on-some-instance-type-4748a7c74809)
+
 # Objective
 
 1. Return JSON with modified values.
