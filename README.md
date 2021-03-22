@@ -37,7 +37,7 @@ In this scenario your client wants some JSON representation modified from some i
 }
 ```
 
-In the above example, `gender` can either be a `0` for female, `1` or a `2` for non-binary. This data would've been fetched from some backend DB as a record where `gender` is configured to be an integer value.
+In the above example, `gender` can either be a `0` for female, `1` for male and `2` for non-binary. This data would've been fetched from some backend DB as a record where `gender` is configured to be an integer value.
 
 The client would also like to reformat the value of `occupation` to be slugged and lowercased. e.g. "Frontend Developer" → "frontend-developer"
 
