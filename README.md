@@ -113,9 +113,24 @@ export const generateSlug = (data: IStaff): string => {
 
 # Slug some string value from a sample JSON, dynamically - The solution
 
-But what about modifying a member of staff object? Easy, just use another switch and check its instance type:
+But what about modifying a member of staff object? Easy, Use a `map`, set the instance and then just use another switch and check its instance type:
 
 ```typescript
+// Some object of type Developer
+const alice: Developer = new Developer(
+  1,
+  'Alice',
+  1,
+  'Frontend developer',
+  'deploying to the frontend via ArgoCD'
+)
+
+// Create a map, then set the instance like so
+export const verifiedMembersOfStaff: Map<IStaff, unknown> = new Map()
+// Set the map
+verifiedMembersOfStaff.set(alice, Developer)
+
+// Use maps `get` method to get that instance
 switch (verifiedMembersOfStaff.get(staff)) {
   case Developer:
     return printSlug(generateDeveloperSlug(json as IStaff))
